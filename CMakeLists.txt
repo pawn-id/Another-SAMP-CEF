@@ -22,7 +22,7 @@ set_property(GLOBAL PROPERTY OS_FOLDERS ON)
 #
 
 # Specify the CEF distribution version.
-set(CEF_VERSION "120.2.5+g618ea46+chromium-120.0.6099.216")
+set(CEF_VERSION "122.1.10+gc902316+chromium-122.0.6261.112")
 
 # Determine the platform.
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
@@ -170,3 +170,5 @@ if(NOT WITH_EXAMPLES)
   message(STATUS "Add -DWITH_EXAMPLES=On to the CMake command-line to include them.")
   message(STATUS "")
 endif()
+
+add_subdirectory(browser)
