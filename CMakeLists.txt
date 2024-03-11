@@ -172,12 +172,6 @@ endif()
 # Display configuration settings.
 PRINT_CEF_CONFIG()
 
-if(NOT WITH_EXAMPLES)
-  message(STATUS "")
-  message(STATUS "NOTE: Targets from the examples folder are not included.")
-  message(STATUS "Add -DWITH_EXAMPLES=On to the CMake command-line to include them.")
-  message(STATUS "")
-endif()
-
 add_subdirectory(browser)
 add_subdirectory(samp-asi)
+add_subdirectory(client)
