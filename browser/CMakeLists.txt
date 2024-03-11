@@ -67,10 +67,10 @@ set(CEFSIMPLE_RESOURCES_SRCS
 #
 
 # Target executable names.
-set(CEF_TARGET "cefsimple")
+set(CEF_TARGET "anothercef")
 if(OS_MAC)
-  set(CEF_HELPER_TARGET "cefsimple_Helper")
-  set(CEF_HELPER_OUTPUT_NAME "cefsimple Helper")
+  set(CEF_HELPER_TARGET "AnotherCEF_Helper")
+  set(CEF_HELPER_OUTPUT_NAME "Another CEF Helper")
 else()
   # Logical target used to link the libcef library.
   ADD_LOGICAL_TARGET("libcef_lib" "${CEF_LIB_DEBUG}" "${CEF_LIB_RELEASE}")

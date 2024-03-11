@@ -153,10 +153,18 @@ add_subdirectory(${CEF_LIBCEF_DLL_WRAPPER_PATH} libcef_dll_wrapper)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 # Configure building of the examples.
-option(WITH_EXAMPLES "Enable or disable building of examples." ON)
-if(WITH_EXAMPLES)
-  # Include example application targets.
-  add_subdirectory(examples)
+
+if(DEFINED ENV{DIRECTX9_SDK_DIR})
+  set(DIRECTX9_SDK_DIR "$ENV{DIRECTX9_SDK_DIR}")
+else()
+  if(OS_WINDOWS)
+    message(FATAL_ERROR "A DirectX 9 SDK installation is required. Set the "
+                        "DIRECTX9_SDK_DIR environment variable to specify the "
+                        "installation path."
+                        "For example: set DIRECTX9_SDK_DIR=C:\\Program Files (x86)\\Microsoft DirectX SDK (June 2010)")
+  else()
+    message(STATUS "DirectX 9 SDK is not required on non-Windows platforms.")
+  endif()
 endif()
 
 # TODO: Include other application targets here.
